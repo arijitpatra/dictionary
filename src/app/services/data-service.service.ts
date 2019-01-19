@@ -7,13 +7,19 @@ import { HttpClient } from '@angular/common/http';
 export class DataServiceService {
 
   @Output() addWordToBookmark: EventEmitter<boolean> = new EventEmitter();
+  @Output() getBookmarkCount: EventEmitter<boolean> = new EventEmitter();
+
   constructor(private httpService: HttpClient) { }
 
-getData() {
+  getData() {
     return this.httpService.get('../../assets/data.json');
   }
 
   addToListBookmark(word) {
     this.addWordToBookmark.emit(word);
+  }
+
+  updateBookmarksCount(count) {
+    this.getBookmarkCount.emit(count);
   }
 }

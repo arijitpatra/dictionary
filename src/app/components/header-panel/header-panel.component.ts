@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataServiceService } from '../../services/data-service.service';
 
 @Component({
   selector: 'app-header-panel',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderPanelComponent implements OnInit {
 
-  constructor() { }
+  bookmarkCount: number;
+
+  constructor(private dataService: DataServiceService) { }
 
   ngOnInit() {
+    this.dataService.getBookmarkCount.subscribe(x => this.bookmarkCount = x);
   }
 
 }

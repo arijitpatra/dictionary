@@ -33,7 +33,6 @@ export class WordsPanelComponent implements OnInit {
     }
 
     playAudio(audioSrc) {
-      console.log(audioSrc);
       const audio = new Audio();
       audio.src = audioSrc;
       audio.load();

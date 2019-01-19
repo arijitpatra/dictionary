@@ -19,7 +19,7 @@
       <div class="description">
         {{item.description}}
         <div class="g-flex">
-            <i class="ml-3 fa fa-volume-up" aria-hidden="true"></i>
+            <i class="ml-3 fa fa-volume-up" aria-hidden="true" (click)="playAudio(item.audio_url)"></i>
             <i class="ml-2 fa fa-plus-circle" aria-hidden="true" (click)="addToBookmark(item.word)"></i>
         </div>
       </div>
