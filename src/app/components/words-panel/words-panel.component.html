@@ -1,5 +1,5 @@
 <section class="p-5">
-  <input name="search" [(ngModel)]="filterText" (ngModelChange)="doFilter()" placeholder="search" class="w-100 p-2"/>
+  <input name="search" [(ngModel)]="filterText" (ngModelChange)="doFilter()" placeholder="Search words..." class="w-100 p-2"/>
 
   <div>
 
@@ -13,8 +13,16 @@
     </div>
 
     <div class="row-like" *ngFor="let item of filteredData">
-      <div class="word">{{item.word}}</div>
-      <div class="description">{{item.description}}</div>
+      <div class="word">
+        {{item.word}}
+      </div>
+      <div class="description">
+        {{item.description}}
+        <div class="g-flex">
+            <i class="ml-3 fa fa-volume-up" aria-hidden="true"></i>
+            <i class="ml-2 fa fa-plus-circle" aria-hidden="true" (click)="addToBookmark(item.word)"></i>
+        </div>
+      </div>
     </div>
   </div>
 

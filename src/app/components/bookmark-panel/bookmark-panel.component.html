@@ -2,4 +2,11 @@
   <div class="bookmark-panel-header w-100">
       <i class="fa fa-list-ul mr-2" aria-hidden="true"></i> Bookmark History
   </div>
+  <div class="bookmarks">
+    <div class="card" *ngFor="let item of bookmarkedWordsArray">
+      {{item}}
+      <i class="ml-2 fa fa-minus-circle" aria-hidden="true" (click)="removeFromBookmark(item)"></i>
+    </div>
+  </div>
+  <button class="btn btn-warning btn-sm"><i class="fa fa-trash-o mr-2" aria-hidden="true"></i>Clear Bookmarks</button>
 </section>

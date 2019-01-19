@@ -27,4 +27,16 @@ export class WordsPanelComponent implements OnInit {
         }
       });
     }
+
+    addToBookmark(word) {
+      this.dataService.addToListBookmark(word);
+    }
+
+    playAudio(audioSrc) {
+      console.log(audioSrc);
+      const audio = new Audio();
+      audio.src = audioSrc;
+      audio.load();
+      audio.play();
+    }
 }
