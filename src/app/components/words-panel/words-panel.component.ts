@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataServiceService } from '../../services/data-service.service';
+import { log } from 'util';
 
 @Component({
   selector: 'app-words-panel',
@@ -14,7 +15,13 @@ export class WordsPanelComponent implements OnInit {
 
   constructor(private dataService: DataServiceService) { }
 
+  alphabetArray = [];
+
   ngOnInit() {
+    for (let i = 65; i <= 90; i++) {
+      this.alphabetArray.push(String.fromCharCode(i));
+    }
+
     this.dataService.getData().subscribe(x => {
       this.data = this.filteredData = x.data;
     });
@@ -34,7 +41,7 @@ export class WordsPanelComponent implements OnInit {
 
     playAudio(audioSrc) {
       const audio = new Audio();
-      audio.src = audioSrc;
+      audio.src = "../../../assets/bell-ringing-01.mp3";
       audio.load();
       audio.play();
     }

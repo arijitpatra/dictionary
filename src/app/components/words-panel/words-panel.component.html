@@ -1,5 +1,10 @@
 <section class="p-5">
-  <input name="search" [(ngModel)]="filterText" (ngModelChange)="doFilter()" placeholder="Search words..." class="w-100 p-2"/>
+
+    <div class="btn-group">
+        <button type="button" class="btn btn-primary" *ngFor="let character of alphabetArray">{{character}}</button>
+    </div>
+
+  <input name="search" [(ngModel)]="filterText" (ngModelChange)="doFilter()" placeholder="Search words..." class="w-100 p-2 alphabetArray"/>
 
   <div>
 
