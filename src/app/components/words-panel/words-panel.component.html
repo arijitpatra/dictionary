@@ -1,0 +1,21 @@
+<section class="p-5">
+  <input name="search" [(ngModel)]="filterText" (ngModelChange)="doFilter()" placeholder="search" class="w-100 p-2"/>
+
+  <div>
+
+    <div class="row-like">
+      <div class="word"><b>Word</b></div>
+      <div class="description"><b>Description</b></div>
+    </div>
+
+    <div *ngIf="filteredData.length === 0" class="col-12">
+      Oops even we don't know the meaning of : {{filterText}}
+    </div>
+
+    <div class="row-like" *ngFor="let item of filteredData">
+      <div class="word">{{item.word}}</div>
+      <div class="description">{{item.description}}</div>
+    </div>
+  </div>
+
+</section>

@@ -1,0 +1,32 @@
+.word {
+    display: flex;
+    flex: 1;
+    // flex: 1 0 5%;
+}
+
+.description {
+    display: flex;
+    flex: 1;
+    // flex: 1 1 50%;
+}
+
+.row-like {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 25px 0;
+}
+
+@media screen and ( min-width: 768px ) {
+    .word {
+        display: flex;
+        flex: none;
+        width: 20%;
+    }
+    
+    .description {
+        display: flex;
+        flex: none;
+        width: 80%;
+    }
+}
