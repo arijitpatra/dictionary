@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { DataServiceService } from '../../services/data-service.service';
-import { log } from 'util';
 
 @Component({
   selector: 'app-words-panel',
   templateUrl: './words-panel.component.html',
   styleUrls: ['./words-panel.component.scss']
 })
+
 export class WordsPanelComponent implements OnInit {
 
   filterText: string;
@@ -20,16 +20,20 @@ export class WordsPanelComponent implements OnInit {
   alphabetArray = [];
 
   ngOnInit() {
+
+    // this will dynamacially form the list of alphabets based on the ASCII values
     for (let i = 65; i <= 90; i++) {
       this.alphabetArray.push(String.fromCharCode(i));
     }
 
-    this.dataService.getData().subscribe(x => {
+    // to get the full dictionary JSON
+    this.dataService.getData().subscribe((x: any) => {
       this.data = this.filteredData = x.data;
       this.pageLoader = false;
     });
   }
 
+  // the highlight of each selected alphabets is handled here
   highlightSelectedAlphabet(character?: string) {
     if (character) {
       if (this.previousSelectedAlphabet) {
@@ -46,6 +50,7 @@ export class WordsPanelComponent implements OnInit {
     }
   }
 
+  // input field search filter, does a full text search
   doFilter() {
     this.filteredData = this.data.filter(x => {
       if (x.word.toUpperCase().includes(this.filterText.toUpperCase())) {
@@ -55,6 +60,7 @@ export class WordsPanelComponent implements OnInit {
     this.highlightSelectedAlphabet();
   }
 
+  // to search based on starting alphabets
   alphabetBasedFilter(character) {
     this.filteredData = this.data.filter(x => {
       if (x.word.toUpperCase().startsWith(character.toUpperCase())) {

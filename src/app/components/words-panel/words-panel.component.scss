@@ -1,48 +1,43 @@
-.word {
+.l-word {
   display: flex;
   flex: 1;
-  // flex: 1 0 5%;
 }
 
-.description {
+.l-description {
   display: flex;
   flex: 1;
-  // flex: 1 1 50%;
 }
 
 @media screen and (min-width: 768px) {
-  .word {
+  .l-word {
     display: flex;
     flex: none;
     width: 20%;
   }
 
-  .description {
+  .l-description {
     display: flex;
     flex: none;
     width: 80%;
   }
 }
 
-.row-like {
+.l-row-like {
   display: flex;
   flex-wrap: wrap;
   margin: 0;
   padding: 10px;
 }
 
-.alphabets-container {
+.l-alphabets-container {
   display: flex;
-  // justify-content: space-between;
   flex-wrap: wrap;
 }
 
-.alphabet {
-  // height: 35px;
+.l-alphabet {
   border-right: 1px solid #d4d4d4;
   border-top: 1px solid #d4d4d4;
   border-bottom: 1px solid #d4d4d4;
-  // width: 35px;
   flex: 1;
   display: flex;
   justify-content: center;
@@ -63,7 +58,7 @@
   }
 }
 
-.striped-rows {
+.l-striped-rows {
   border-bottom: 1px solid #DDD;
   &:nth-child(odd) {
     background: white;
@@ -73,24 +68,24 @@
   }
 }
 
-.search-icon {
+.l-search-icon {
   position: absolute;
   right: 15px;
   top: calc(
     50% - 0.5em
-  ); /* Keep icon in center of input, regardless of the input height */
+  );
 }
 
-.search-input {
+.l-search-input {
   border-radius: 5px;
   border: 1px solid #d4d4d4;
 }
 
-.input-wrapper {
+.l-input-wrapper {
   position: relative;
 }
 
-.scrollable-area {
+.l-scrollable-area {
     overflow-y: scroll !important;
     max-height: calc(100vh - 323px);
     &::-webkit-scrollbar {

@@ -1,20 +1,20 @@
 <section class="p-2">
 
-  <div class="alphabets-container mt-3">
-    <div id={{character}} class="g-cursor-pointer alphabet" *ngFor="let character of alphabetArray" (click)="alphabetBasedFilter(character)">{{character}}</div>
+  <div class="l-alphabets-container mt-3">
+    <div id={{character}} class="g-cursor-pointer l-alphabet" *ngFor="let character of alphabetArray" (click)="alphabetBasedFilter(character)">{{character}}</div>
   </div>
 
-  <div class="input-wrapper mt-5">
-    <input name="search" [(ngModel)]="filterText" (ngModelChange)="doFilter()" placeholder="Search words..." class="w-100 p-2 pr-5 search-input"
+  <div class="l-input-wrapper mt-5">
+    <input name="search" [(ngModel)]="filterText" (ngModelChange)="doFilter()" placeholder="Search words..." class="w-100 p-2 pr-5 l-search-input"
       maxlength="50" />
-    <label for="search" class="fa fa-search search-icon"></label>
+    <label for="search" class="fa fa-search l-search-icon"></label>
   </div>
 
   <div>
 
-    <div class="row-like mt-4 l-border-bottom" *ngIf="filteredData.length !== 0">
-      <div class="word"><b>Word</b></div>
-      <div class="description"><b>Description</b></div>
+    <div class="l-row-like mt-4 l-border-bottom" *ngIf="filteredData.length !== 0">
+      <div class="l-word"><b>Word</b></div>
+      <div class="l-description"><b>Description</b></div>
     </div>
 
     <div *ngIf="filteredData.length === 0 && pageLoader === false" class="mt-4">
@@ -23,12 +23,12 @@
 
     <div *ngIf="pageLoader === true" class="mt-3">Loading dictionary...</div>
 
-    <div *ngIf="pageLoader === false" class="scrollable-area">
-      <div class="row-like striped-rows" *ngFor="let item of filteredData">
-        <div class="word">
+    <div *ngIf="pageLoader === false" class="l-scrollable-area">
+      <div class="l-row-like l-striped-rows" *ngFor="let item of filteredData">
+        <div class="l-word">
           {{item.word}}
         </div>
-        <div class="description">
+        <div class="l-description">
           <div class="col-11 pl-0">{{item.description}}</div>
           <div class="g-flex col-1">
             <i class="fa fa-volume-up g-cursor-pointer" aria-hidden="true" (click)="playAudio(item.audio_url)"></i>

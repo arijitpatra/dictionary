@@ -13,6 +13,7 @@ export class HeaderPanelComponent implements OnInit {
   constructor(private dataService: DataServiceService) { }
 
   ngOnInit() {
+    // get count of bookmarks
     this.dataService.getBookmarkCount.subscribe(x => this.bookmarkCount = x);
   }
 
