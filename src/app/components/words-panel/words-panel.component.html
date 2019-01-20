@@ -1,34 +1,43 @@
-<section class="p-5">
+<section class="p-2">
 
-    <div class="btn-group">
-        <button type="button" class="btn btn-primary" *ngFor="let character of alphabetArray">{{character}}</button>
-    </div>
+  <div class="alphabets-container mt-3">
+    <div id={{character}} class="g-cursor-pointer alphabet" *ngFor="let character of alphabetArray" (click)="alphabetBasedFilter(character)">{{character}}</div>
+  </div>
 
-  <input name="search" [(ngModel)]="filterText" (ngModelChange)="doFilter()" placeholder="Search words..." class="w-100 p-2 alphabetArray"/>
+  <div class="input-wrapper mt-5">
+    <input name="search" [(ngModel)]="filterText" (ngModelChange)="doFilter()" placeholder="Search words..." class="w-100 p-2 pr-5 search-input"
+      maxlength="50" />
+    <label for="search" class="fa fa-search search-icon"></label>
+  </div>
 
   <div>
 
-    <div class="row-like">
+    <div class="row-like mt-4 l-border-bottom" *ngIf="filteredData.length !== 0">
       <div class="word"><b>Word</b></div>
       <div class="description"><b>Description</b></div>
     </div>
 
-    <div *ngIf="filteredData.length === 0" class="col-12">
-      Oops even we don't know the meaning of : {{filterText}}
+    <div *ngIf="filteredData.length === 0 && pageLoader === false" class="mt-4">
+      <i>Oops even we don't know the meaning of : </i> {{filterText}}
     </div>
 
-    <div class="row-like" *ngFor="let item of filteredData">
-      <div class="word">
-        {{item.word}}
-      </div>
-      <div class="description">
-        {{item.description}}
-        <div class="g-flex">
-            <i class="ml-3 fa fa-volume-up" aria-hidden="true" (click)="playAudio(item.audio_url)"></i>
-            <i class="ml-2 fa fa-plus-circle" aria-hidden="true" (click)="addToBookmark(item.word)"></i>
+    <div *ngIf="pageLoader === true" class="mt-3">Loading dictionary...</div>
+
+    <div *ngIf="pageLoader === false" class="scrollable-area">
+      <div class="row-like striped-rows" *ngFor="let item of filteredData">
+        <div class="word">
+          {{item.word}}
+        </div>
+        <div class="description">
+          <div class="col-11 pl-0">{{item.description}}</div>
+          <div class="g-flex col-1">
+            <i class="fa fa-volume-up g-cursor-pointer" aria-hidden="true" (click)="playAudio(item.audio_url)"></i>
+            <i class="ml-2 fa fa-plus-circle g-cursor-pointer" aria-hidden="true" (click)="addToBookmark(item.word)"></i>
+          </div>
         </div>
       </div>
     </div>
+
   </div>
 
 </section>

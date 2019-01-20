@@ -1,32 +1,103 @@
 .word {
-    display: flex;
-    flex: 1;
-    // flex: 1 0 5%;
+  display: flex;
+  flex: 1;
+  // flex: 1 0 5%;
 }
 
 .description {
+  display: flex;
+  flex: 1;
+  // flex: 1 1 50%;
+}
+
+@media screen and (min-width: 768px) {
+  .word {
     display: flex;
-    flex: 1;
-    // flex: 1 1 50%;
+    flex: none;
+    width: 20%;
+  }
+
+  .description {
+    display: flex;
+    flex: none;
+    width: 80%;
+  }
 }
 
 .row-like {
-    display: flex;
-    flex-wrap: wrap;
-    margin: 0;
-    padding: 25px 0;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 10px;
 }
 
-@media screen and ( min-width: 768px ) {
-    .word {
-        display: flex;
-        flex: none;
-        width: 20%;
+.alphabets-container {
+  display: flex;
+  // justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.alphabet {
+  // height: 35px;
+  border-right: 1px solid #d4d4d4;
+  border-top: 1px solid #d4d4d4;
+  border-bottom: 1px solid #d4d4d4;
+  // width: 35px;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  &:first-child {
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+    border-left: 1px solid #d4d4d4;
+  }
+  &:last-child {
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    border-right: 1px solid #d4d4d4;
+  }
+  &:hover {
+      background: #f1f1f1;
+  }
+}
+
+.striped-rows {
+  border-bottom: 1px solid #DDD;
+  &:nth-child(odd) {
+    background: white;
+  }
+  &:nth-child(even) {
+    background: #f1f1f1;
+  }
+}
+
+.search-icon {
+  position: absolute;
+  right: 15px;
+  top: calc(
+    50% - 0.5em
+  ); /* Keep icon in center of input, regardless of the input height */
+}
+
+.search-input {
+  border-radius: 5px;
+  border: 1px solid #d4d4d4;
+}
+
+.input-wrapper {
+  position: relative;
+}
+
+.scrollable-area {
+    overflow-y: scroll !important;
+    max-height: calc(100vh - 323px);
+    &::-webkit-scrollbar {
+        display: none;
     }
-    
-    .description {
-        display: flex;
-        flex: none;
-        width: 80%;
-    }
+}
+
+.l-border-bottom {
+        border-bottom: 1px solid #DDD;
 }

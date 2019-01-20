@@ -1,11 +1,19 @@
 .header-section {
-    background: #2ca26d;
-    color: white;
-    padding: 0 15px;
+  // background: #2ca26d;
+  color: white;
+  padding: 0 15px;
+  background: rgb(73,6,82);
+background: linear-gradient(90deg, rgba(73,6,82,1) 0%, rgba(200,83,57,1) 70%, rgba(170,17,123,1) 100%);
 }
 
 .total-bookmarks {
-    position: absolute;
-    right: 0;
-    top: 0;
+    background: white;
+    border-radius: 5px;
+    color: #31393F;
+    display: flex;
+    padding-left: 15px;
+    align-items: flex-end;
+    height: 100%;
+    padding-bottom: 5px;
+    font-weight: bold;
 }

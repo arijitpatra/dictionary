@@ -1,3 +1,20 @@
-.bookmarks {
-    border: 1px solid #2ca26d;
+.bookmarks-container {
+    border: 1px solid #d4d4d4;
+    min-height: calc(100vh - 190px);
+    max-height: calc(100vh - 190px);
+    overflow-y: scroll;
+    &::-webkit-scrollbar {
+        display: none;
+    }
+    &-item {
+        border-bottom: 1px solid #d4d4d4;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
+    }
+}
+
+.l-button-color {
+    background: #31393F !important;
 }
