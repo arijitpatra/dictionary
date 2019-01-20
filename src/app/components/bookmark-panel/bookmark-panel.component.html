@@ -5,7 +5,7 @@
   <div class="bookmarks-container mt-2">
     <div *ngFor="let item of bookmarkedWordsArray" class="bookmarks-container-item">
       {{item}}
-      <i class="ml-2 fa fa-minus-circle float-right g-cursor-pointer" aria-hidden="true" (click)="removeFromBookmark(item)"></i>
+      <i class="ml-2 fa fa-minus float-right g-cursor-pointer" aria-hidden="true" (click)="removeFromBookmark(item)"></i>
     </div>
   </div>
   <button class="btn l-button-color text-white btn-sm mt-2 w-100" (click)="removeAllBookmarks()"><i class="fa fa-trash-o mr-2" aria-hidden="true"></i>Clear Bookmarks</button>

@@ -40,7 +40,9 @@ export class WordsPanelComponent implements OnInit {
       }
       this.previousSelectedAlphabet = character;
     } else {
-      document.getElementById(this.previousSelectedAlphabet).style.background = '#fff';
+      if (this.previousSelectedAlphabet) {
+        document.getElementById(this.previousSelectedAlphabet).style.background = '#fff';
+      }
     }
   }
 
